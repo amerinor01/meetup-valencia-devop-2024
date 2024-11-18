@@ -30,14 +30,14 @@ jobs:
       - name: Marp Build (README)
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: --theme rose-pine.css slices.md -o build/index.html
+          args: --theme rose-pine.css slides.md -o build/index.html
         env:
           MARP_USER: root:root
 
       - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: --theme rose-pine.css slices.md --allow-local-files -o build/slices.pdf
+          args: --theme rose-pine.css slides.md --allow-local-files -o build/slides.pdf
         env:
           MARP_USER: root:root
 
