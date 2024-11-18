@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1731676054,
+        "narHash": "sha256-OZiZ3m8SCMfh3B6bfGC/Bm4x3qc1m2SVEAlkV6iY7Yg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5e4fbfb6b3de1aa2872b76d49fafc942626e2add",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "rosepine": "rosepine"
+      }
+    },
+    "rosepine": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689659529,
+        "narHash": "sha256-fgG1hIFBElI2cwS2LxQkXS0rSbVxil5+xoCI/YbTc18=",
+        "owner": "rainbowflesh",
+        "repo": "Rose-Pine-For-Marp",
+        "rev": "a2b67f6f7b0e03987d1e4076dac92321af57e644",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rainbowflesh",
+        "repo": "Rose-Pine-For-Marp",
+        "rev": "a2b67f6f7b0e03987d1e4076dac92321af57e644",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
