@@ -117,3 +117,25 @@ img[alt~="center"] {
 - [Colmena](https://github.com/zhaofengli/colmena): Orquestación ligera
 - [Home Manager](https://github.com/nix-community/home-manager): Entornos de usuario declarativos
 - Integraciones con herramientas como [Terraform](https://github.com/stackbuilders/nixpkgs-terraform/), Helm(con [Kubenix](https://kubenix.org/modules/helm/) ), etc.
+
+---
+
+# Demo Time 
+
+---
+
+# Retos y limitaciones 
+## Adopción en la Comunidad
+
+- Tecnología de nicho, pero en auge.  
+- La comunidad es muy activa, pero aún hay áreas que mejorar, comola documentación
+
+## Flakes  
+- Características experimentales.  
+- Todavía no están estandarizados.
+
+---
+
+# Nix en DevOps: entornos consistentes y reproducibles sin esfuerzo
+
+## Valencia DevOps, 20/11/2024
