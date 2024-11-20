@@ -20,7 +20,7 @@ img[alt~="center"] {
 
 ---
 
-# ¿Quién soy?
+# $ whoami
 🔹 Apasionado del software libre  
 🔹 Estudiante de doctorado en la Universidad de Castilla-La Mancha  
 🔹 Miembro del Summer of Nix 2024  
