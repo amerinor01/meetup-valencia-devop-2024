@@ -20,122 +20,127 @@ img[alt~="center"] {
 
 ---
 
-# $ Whoami
-🔹 Apasionado del software libre
-🔹 Estudiante de doctorado en la Universidad de Castilla-La Mancha
-🔹 Miembro del Summer of Nix 2024
-🔹 Fediverse: [@amerinor01@mastodon.social](https://mastodon.social/@amerinor01)
-🔹 Matrix: [@amerino:matrix.org](https://matrix.to/#/@amerino:matrix.org)
+# ¿Quién soy?
+🔹 Apasionado del software libre  
+🔹 Estudiante de doctorado en la Universidad de Castilla-La Mancha  
+🔹 Miembro del Summer of Nix 2024  
+🔹 Fediverse: [@amerinor01@mastodon.social](https://mastodon.social/@amerinor01)  
+🔹 Matrix: [@amerino:matrix.org](https://matrix.to/#/@amerino:matrix.org)  
 
 ---
 
-# ¿Que es Nix?
-![bg vertical right 70%](imgs/file.svg)
-* Gestor de Paquetes
-* Sistema Operativo
-* Lenguaje de Programación
-* Ecosistema integral diseñado para desarrollar, implementar y gestionar software de forma reproducible.
+# ¿Qué es Nix?
+![bg vertical right 70%](imgs/file.svg)  
+* Gestor de paquetes  
+* Sistema operativo  
+* Lenguaje de programación  
+* Ecosistema integral diseñado para desarrollar, implementar y gestionar software de forma reproducible  
 
 ---
 
 # Orígenes de Nix
 
-- Bases académicas -> Solucionar los principales problemas de la construción del software
-    - Reproducibilidad:"_Build once, run everywhere_"
-    - Inmutabilidad: Garantiza estados idempotentes
-    - Declarativo
-- [Dolstra, E. (2006). The purely functional software deployment model.](https://www.semanticscholar.org/paper/The-purely-functional-software-deployment-model-Dolstra/7c9d53d567c4db2034d8019ff11e0eb623fe2142) 
+- Bases académicas → Resolver los principales problemas en la construcción del software:
+    - **Reproducibilidad**: "_Build once, run everywhere_"  
+    - **Inmutabilidad**: Garantiza estados idempotentes  
+    - **Declarativo**  
+- Referencia clave:  
+    [Dolstra, E. (2006). *The purely functional software deployment model*.](https://www.semanticscholar.org/paper/The-purely-functional-software-deployment-model-Dolstra/7c9d53d567c4db2034d8019ff11e0eb623fe2142)
 
 ---
 
-# Por que importa a los DevOps
-- Aliniación con los principios de CI/CD
-- Ya no existe el caso de "Funciona en mi maquina"
-- Permite una mejores entornos compartidos entre los equipos de Dev y DevOps
+# ¿Por qué importa a los DevOps?
+- Alineación con los principios de CI/CD  
+- Elimina el caso de "Funciona en mi máquina"  
+- Permite mejores entornos compartidos entre los equipos de desarrollo y operaciones  
 
 ---
 
 # Reproducibilidad
 
-- Todo en nix parte de una derivación
-- Las derivaciones contienen información:
-    - Dependencias
-    - instrucciones de compilación / instalación
-    - versiones y metadatos de la derivación
-- Cada Dependencia es una propia derivación
+- Todo en Nix parte de una derivación  
+- Las derivaciones contienen información como:  
+    - Dependencias  
+    - Instrucciones de compilación/instalación  
+    - Versiones y metadatos de la derivación  
+- Cada dependencia es una derivación propia  
 
 ---
 
-# Reproductibilidad
-- Cada derivación se introduce en `/nix/store/...` con un nombre único en función del resultado del binario/biblioteca
-    - Multiples versiones pueden coexistir sin generar conflictos.
-- Bibliotecas aisladas para cada derivación.
+# Reproducibilidad: almacenamiento
+
+- Cada derivación se almacena en `/nix/store/...` con un nombre único basado en el resultado del binario/bibliotecas.  
+    - Esto permite que múltiples versiones coexistan sin generar conflictos.  
+- Las bibliotecas están aisladas en cada derivación.
 
 ---
 
+# Reproducibilidad: aislamiento
 
-# Reproductibilidad
-- __Aislamiento de red__: Nix bloquea el acceso a internet durante la construcción de paquetes para evitar dependencias no declaradas.
-    - Esto garantiza que las construcciones sean reproducibles y no dependan del estado externo.
-
+- **Aislamiento de red**: Nix bloquea el acceso a internet durante la construcción de paquetes para evitar dependencias no declaradas.  
+    - Esto garantiza construcciones reproducibles y sin dependencia del estado externo.  
 
 ---
 
 # Nixpkgs
-![bg vertical right 90%](imgs/repo_size.svg)
-- Mas de 100.000 paquetes en Nixpkgs
-- Compatibilidad multiplataforma
-- Permite el uso de caches para acelerar las actualizaciones
+![bg vertical right 90%](imgs/repo_size.svg)  
+- Más de 100,000 paquetes en Nixpkgs  
+- Compatibilidad multiplataforma  
+- Uso de cachés para acelerar las actualizaciones  
 
 ---
 
 # NixOS
-- Configuración total del sistema con expresiones Nix
-- __Actualizaciones seguras y reversibles:__ Las actualizaciones son atómicas, y puedes revertir fácilmente a la configuración anterior
-- Sistema Operativo declarativo e [inmutable](https://github.com/nix-community/impermanence).
-- Soporte para entornos heterogéneos
-    - Perminte la configuración de múltiples dispositivos con diferentes configuraciones (HPC, IoT, Escritorios)
+- Configuración total del sistema usando expresiones en Nix  
+- **Actualizaciones seguras y reversibles**: Las actualizaciones son atómicas, y puedes revertir fácilmente a la configuración anterior  
+- Sistema operativo declarativo e [inmutable](https://github.com/nix-community/impermanence)  
+- Soporte para entornos heterogéneos:  
+    - Permite configurar múltiples dispositivos con diferentes necesidades (HPC, IoT, escritorios)  
 
 ---
 
 # Herramientas para CI/CD
-- Hydra: Construcción de pipelines de CI con Nix
-- Cachix: Herramienta de caches para derivaciones Nix
+- **Hydra**: Construcción de pipelines de CI con Nix  
+- **Cachix**: Herramienta de cachés para derivaciones en Nix  
 
 ---
 
 # Estandarización del entorno de trabajo con Nix
-- DevBox: Configura rápidamente espacios de trabajo aislados para pruebas y desarrollo.
-- DevShell: Crea entornos de desarrollo bajo demanda, adaptados a las necesidades del proyecto.
-- Flakes: Un estándar moderno para la reproducibilidad y la gestión estructurada de proyectos
-    - Incluido en Nix.
----
 
-# Casos de Uso Avanzados
-- [NixOps](https://github.com/NixOS/nixops): Automatización de despliegues
-- Construcción y ejecución de contenedores con [dockerTools](https://nix.dev/tutorials/nixos/building-and-running-docker-images.html)
-- [Colmena](https://github.com/zhaofengli/colmena): Orquestación ligera
-- [Home Manager](https://github.com/nix-community/home-manager): Entornos de usuario declarativos
-- Integraciones con herramientas como [Terraform](https://github.com/stackbuilders/nixpkgs-terraform/), Helm(con [Kubenix](https://kubenix.org/modules/helm/) ), etc.
+- **Flakes**: Un estándar moderno para la reproducibilidad y gestión estructurada de proyectos (incluido en Nix).  
+- **DevShell**: Crea entornos de desarrollo bajo demanda adaptados a las necesidades del proyecto.  
+- **DevBox**: Configura rápidamente espacios de trabajo aislados para pruebas y desarrollo.  
+- **Devenv**: Ideal para equipos y flujos de trabajo complejos con servicios.  
 
 ---
 
-# Demo Time 
+# Casos de uso avanzados
+
+- [NixOps](https://github.com/NixOS/nixops): Automatización de despliegues  
+- Construcción y ejecución de contenedores con [dockerTools](https://nix.dev/tutorials/nixos/building-and-running-docker-images.html)  
+- [Colmena](https://github.com/zhaofengli/colmena): Orquestación ligera  
+- [Home Manager](https://github.com/nix-community/home-manager): Entornos de usuario declarativos  
+- Integraciones con herramientas como [Terraform](https://github.com/stackbuilders/nixpkgs-terraform/), Helm (con [Kubenix](https://kubenix.org/modules/helm/)), etc.  
 
 ---
 
-# Retos y limitaciones 
-## Adopción en la Comunidad
+# Demo Time  
 
+---
+
+# Retos y limitaciones
+
+## Adopción en la comunidad
 - Tecnología de nicho, pero en auge.  
-- La comunidad es muy activa, pero aún hay áreas que mejorar, comola documentación
+- Comunidad activa, aunque todavía hay áreas a mejorar, como la documentación.  
 
-## Flakes  
+## Flakes
 - Características experimentales.  
-- Todavía no están estandarizados.
+- Aún no están estandarizados.  
 
 ---
 
 # Nix en DevOps: entornos consistentes y reproducibles sin esfuerzo
 
 ## Valencia DevOps, 20/11/2024
+
